@@ -1,0 +1,151 @@
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+/* Reset cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Dancing Script', cursive;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    display: flex;
+    flex-direction: column; /* Xếp dọc */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-content-wrapper {
+    position: relative;
+    animation: fadeIn 1.5s ease-out 1s forwards;
+    opacity: 0;
+}
+
+.container {
+    text-align: center;
+    color: white;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 30px 50px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    position: relative; 
+    z-index: 2; 
+}
+
+.container h1 {
+    font-size: 4.5rem;
+    margin-bottom: 10px;
+}
+
+.container p {
+    font-size: 1.8rem;
+}
+
+.bouquet-container {
+    margin-top: 40px; 
+    font-size: 18rem; 
+    line-height: 1; 
+    z-index: 1; 
+    animation: grow 2.5s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.5s forwards;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.flower-marquee {
+    position: absolute;
+    font-size: 2.5rem;
+    overflow: hidden;
+    z-index: 1; /* Thêm z-index để nằm sau container */
+}
+
+.flower-marquee.top,
+.flower-marquee.bottom {
+    left: 0;
+    width: 100%;
+    height: 3rem;
+}
+.flower-marquee.top { top: -2.5rem; }
+.flower-marquee.bottom { bottom: -2.5rem; }
+
+.flower-marquee.left,
+.flower-marquee.right {
+    top: 0;
+    height: 100%;
+    width: 3rem;
+}
+.flower-marquee.left { left: -2.5rem; }
+.flower-marquee.right { right: -2.5rem; }
+
+.track {
+    display: flex;
+    white-space: nowrap;
+    position: absolute;
+}
+.track span {
+    display: block;
+}
+
+.left .track span,
+.right .track span {
+    height: 50%; /* Thêm height 50% cho mỗi span */
+    writing-mode: vertical-rl; 
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.top .track {
+    animation: marquee-h 5s linear infinite;
+}
+.bottom .track {
+    animation: marquee-h 5s linear infinite reverse;
+}
+
+.left .track,
+.right .track {
+    flex-direction: column;
+    height: 200%;
+}
+
+.left .track {
+    animation: marquee-v 5s linear infinite reverse;
+}
+.right .track {
+    animation: marquee-v 5s linear infinite;
+}
+
+@keyframes grow {
+    from { opacity: 0; transform: scale(0) rotate(-45deg); }
+    to { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes marquee-h {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@keyframes marquee-v {
+    from { transform: translateY(0); }
+    to { transform: translateY(-50%); }
+}
+
+#greeting-message {
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+    user-select: none;
+}
+
+#greeting-message:hover {
+    transform: scale(1.05);
+    color: #fff7b0;
+}
