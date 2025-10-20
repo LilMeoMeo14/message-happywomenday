@@ -19,55 +19,8 @@ body {
     overflow: hidden;
 }
 
+/* --- CODE CHO DESKTOP (MÁY TÍNH) --- */
 
-/* Áp dụng khi chiều rộng màn hình từ 600px trở xuống */
-@media (max-width: 600px) {
-
-    /* 1. Làm cho wrapper co lại, không bị sát viền */
-    .main-content-wrapper {
-        width: 90%; /* Chiếm 90% chiều rộng màn hình */
-        margin-top: 20px; /* Thêm chút khoảng cách ở trên */
-    }
-
-    /* 2. Giảm kích thước chữ trong hộp */
-    .container h1 {
-        font-size: 2.5rem; /* Giảm từ 4.5rem */
-    }
-
-    .container p {
-        font-size: 1.2rem; /* Giảm từ 1.8rem */
-    }
-
-    .container {
-        padding: 20px 25px; /* Giảm padding (ít hơn trên desktop) */
-    }
-
-    /* 3. Thu nhỏ bó hoa lớn 💐 */
-    .bouquet-container {
-        font-size: 10rem; /* Giảm mạnh từ 18rem */
-        margin-top: 20px; /* Giảm khoảng cách trên */
-    }
-
-    /* 4. Thu nhỏ hoa trên băng chuyền */
-    .flower-marquee {
-        font-size: 1.8rem; /* Giảm từ 2.5rem */
-    }
-
-    /* 5. Điều chỉnh lại vị trí băng chuyền cho vừa vặn */
-    .flower-marquee.top,
-    .flower-marquee.bottom {
-        height: 2.2rem; /* Giảm chiều cao */
-    }
-    .flower-marquee.top { top: -1.8rem; } /* Gần hơn */
-    .flower-marquee.bottom { bottom: -1.8rem; } /* Gần hơn */
-
-    .flower-marquee.left,
-    .flower-marquee.right {
-        width: 2.2rem; /* Giảm chiều rộng */
-    }
-    .flower-marquee.left { left: -1.8rem; } /* Gần hơn */
-    .flower-marquee.right { right: -1.8rem; } /* Gần hơn */
-}
 .main-content-wrapper {
     position: relative;
     animation: fadeIn 1.5s ease-out 1s forwards;
@@ -197,4 +150,56 @@ body {
 #greeting-message:hover {
     transform: scale(1.05);
     color: #fff7b0;
+}
+
+
+/* --- *** PHẦN CSS CHO ĐIỆN THOẠI (Responsive) *** --- */
+/* *** ĐẶT Ở CUỐI TỆP LÀ ĐÚNG NHẤT *** */
+
+@media (max-width: 600px) {
+
+    /* 1. Làm cho wrapper co lại, không bị sát viền */
+    .main-content-wrapper {
+        width: 90%; /* Chiếm 90% chiều rộng màn hình */
+        margin-top: 20px; /* Thêm chút khoảng cách ở trên */
+    }
+
+    /* 2. Giảm kích thước chữ trong hộp */
+    .container h1 {
+        font-size: 2.5rem; /* Giảm từ 4.5rem */
+    }
+
+    .container p {
+        font-size: 1.2rem; /* Giảm từ 1.8rem */
+    }
+
+    .container {
+        padding: 20px 25px; /* Giảm padding (ít hơn trên desktop) */
+    }
+
+    /* 3. Thu nhỏ bó hoa lớn 💐 */
+    .bouquet-container {
+        font-size: 10rem; /* Giảm mạnh từ 18rem */
+        margin-top: 20px; /* Giảm khoảng cách trên */
+    }
+
+    /* 4. Thu nhỏ hoa trên băng chuyền */
+    .flower-marquee {
+        font-size: 1.8rem; /* Giảm từ 2.5rem */
+    }
+
+    /* 5. Điều chỉnh lại vị trí băng chuyền cho vừa vặn */
+    .flower-marquee.top,
+    .flower-marquee.bottom {
+        height: 2.2rem; /* Giảm chiều cao */
+    }
+    .flower-marquee.top { top: -1.8rem; } /* Gần hơn */
+    .flower-marquee.bottom { bottom: -1.8rem; } /* Gần hơn */
+
+    .flower-marquee.left,
+    .flower-marquee.right {
+        width: 2.2rem; /* Giảm chiều rộng */
+    }
+    .flower-marquee.left { left: -1.8rem; } /* Gần hơn */
+    .flower-marquee.right { right: -1.8rem; } /* Gần hơn */
 }
